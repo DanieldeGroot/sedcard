@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <title>Model Sedcard – Daniel de Groot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Model Sedcard von Daniel de Groot - 192 cm, Male Model & Artist aus Wiesbaden.">
   <style>
     :root {
       --bg-color: #f7f7f7;
       --card-bg: #ffffff;
       --accent: #111111;
-      --accent-light: #999999;
+      --accent-light: #888888;
       --text: #222222;
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -22,13 +23,13 @@
       font-family: var(--font-main);
       background-color: var(--bg-color);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.4;
       padding: 20px;
       display: flex;
       justify-content: center;
     }
     .page {
-      max-width: 1100px;
+      max-width: 1050px;
       width: 100%;
       background: var(--card-bg);
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -38,16 +39,16 @@
     header {
       display: flex;
       flex-wrap: wrap;
-      padding: 24px;
+      padding: 20px;
       border-bottom: 1px solid #eee;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
-      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
     }
     .profile-photo {
-      flex: 0 0 260px;
-      max-width: 260px;
-      border-radius: 12px;
+      flex: 0 0 220px;
+      max-width: 220px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid #e0e0e0;
     }
@@ -55,84 +56,72 @@
       width: 100%;
       height: auto;
       display: block;
-      object-fit: cover;
     }
     .header-info {
       flex: 1;
       min-width: 260px;
     }
     .name {
-      font-size: 2rem;
-      letter-spacing: 0.08em;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .role {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--accent-light);
       text-transform: uppercase;
-      letter-spacing: 0.25em;
-      margin-bottom: 18px;
+      letter-spacing: 0.2em;
+      margin-bottom: 15px;
     }
     .details-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px 24px;
-      font-size: 0.9rem;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px 15px;
+      font-size: 0.85rem;
     }
     .details-grid dt {
       font-weight: 600;
-      color: var(--accent);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      text-transform: uppercase;
     }
     .details-grid dd {
-      margin-left: 0;
-      color: var(--accent-light);
+      color: var(--accent);
+      font-weight: 500;
     }
     main {
-      padding: 24px;
+      padding: 20px;
       display: grid;
-      grid-template-columns: 2fr 1.6fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
-    @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 800px) {
+      main { grid-template-columns: 1fr; }
     }
     h2 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent-light);
-      margin-bottom: 12px;
-    }
-    .section {
-      margin-bottom: 24px;
-    }
-    .bio {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 8px;
-    }
-    .stats-list {
-      list-style: none;
       font-size: 0.9rem;
-      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-light);
+      margin-bottom: 10px;
+      border-left: 3px solid var(--accent);
+      padding-left: 8px;
     }
-    .stats-list li {
-      margin-bottom: 4px;
-    }
+    .section { margin-bottom: 20px; }
+    .bio { font-size: 0.9rem; color: #444; margin-bottom: 8px; }
+    .stats-list { list-style: none; font-size: 0.85rem; color: #444; }
+    
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
     }
     .gallery figure {
       margin: 0;
-      border-radius: 8px;
+      border-radius: 6px;
       overflow: hidden;
-      border: 1px solid #e0e0e0;
-      background-color: #f7f7f7;
+      border: 1px solid #eee;
     }
     .gallery img {
       width: 100%;
@@ -141,83 +130,61 @@
       object-fit: cover;
       aspect-ratio: 3 / 4;
     }
-    .gallery .wide {
-      grid-column: span 2;
+    .compact-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
     }
-    /* Spezial-Klasse für Ganzkörper/Stelzen-Bilder */
-    .gallery .tall {
-        grid-row: span 2;
-    }
+    .compact-grid .wide { grid-column: span 1 !important; }
+
     .polaroids {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      margin-top: 8px;
     }
     .polaroids img {
       width: 100%;
-      display: block;
-      border-radius: 6px;
+      border-radius: 4px;
       border: 1px solid #ddd;
-      object-fit: cover;
       aspect-ratio: 3 / 4;
+      object-fit: cover;
     }
     .contact-box {
       border-top: 1px solid #eee;
-      padding: 16px 24px 20px;
+      padding: 15px 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
       background-color: #fafafa;
     }
-    .contact-info {
-      font-size: 0.9rem;
-      color: #444;
-    }
-    .contact-info a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .contact-info { font-size: 0.85rem; color: #444; }
+    .contact-info a { color: var(--accent); text-decoration: none; font-weight: 600; }
     .btn {
       display: inline-block;
-      padding: 8px 18px;
-      border-radius: 999px;
+      padding: 7px 15px;
+      border-radius: 4px;
       border: 1px solid var(--accent);
       text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
+      font-size: 0.8rem;
       text-transform: uppercase;
       color: var(--accent);
-      background: transparent;
-      transition: all 0.15s ease;
-      white-space: nowrap;
+      transition: 0.2s;
       cursor: pointer;
     }
-    .btn:hover {
-      background: var(--accent);
-      color: #ffffff;
-    }
-    .btn-secondary {
-      border-color: var(--accent-light);
-      color: var(--accent-light);
-      margin-right: 8px;
-    }
-    .footer-nav {
-      margin-top: 10px;
-      font-size: 0.75rem;
-    }
-    .footer-nav a {
-      color: var(--accent-light);
-      text-decoration: none;
-    }
-    
+    .btn:hover { background: var(--accent); color: #fff; }
+
     @media print {
+      @page { size: A4; margin: 8mm; }
       body { background: white; padding: 0; }
-      .page { box-shadow: none; border-radius: 0; }
-      .btn, .footer-nav { display: none; }
-      header { background: white; }
+      .page { box-shadow: none; border-radius: 0; width: 100%; }
+      header { padding: 10px; background: white !important; }
+      .profile-photo { flex: 0 0 150px; }
+      .name { font-size: 1.4rem; }
+      main { padding: 10px; gap: 15px; }
+      .section { margin-bottom: 12px; }
+      .gallery img, .polaroids img { max-height: 160px; }
+      .btn { display: none; }
+      .contact-box { position: relative; padding: 10px 0; background: white !important; }
     }
   </style>
 </head>
@@ -231,38 +198,14 @@
         <div class="name">Daniel de Groot</div>
         <div class="role">Male Model &amp; Artist</div>
         <dl class="details-grid">
-          <div>
-            <dt>Geburtsdatum</dt>
-            <dd>02.02.1977</dd>
-          </div>
-          <div>
-            <dt>Größe</dt>
-            <dd>192 cm</dd>
-          </div>
-          <div>
-            <dt>Konfektion</dt>
-            <dd>102</dd>
-          </div>
-          <div>
-            <dt>Maße</dt>
-            <dd>B 124 · T 102 · H 115</dd>
-          </div>
-          <div>
-            <dt>Schuhgröße</dt>
-            <dd>47</dd>
-          </div>
-          <div>
-            <dt>Haarstatus</dt>
-            <dd>kurz / Glatze</dd>
-          </div>
-          <div>
-            <dt>Augenfarbe</dt>
-            <dd>braun</dd>
-          </div>
-          <div>
-            <dt>Tattoos</dt>
-            <dd>keine</dd>
-          </div>
+          <div><dt>Geburtsdatum</dt><dd>02.02.1977</dd></div>
+          <div><dt>Größe</dt><dd>192 cm</dd></div>
+          <div><dt>Konfektion</dt><dd>102</dd></div>
+          <div><dt>Maße (B-T-H)</dt><dd>124 · 102 · 115</dd></div>
+          <div><dt>Schuhgröße</dt><dd>47</dd></div>
+          <div><dt>Haarstatus</dt><dd>Glatze</dd></div>
+          <div><dt>Augenfarbe</dt><dd>braun</dd></div>
+          <div><dt>Tattoos</dt><dd>keine</dd></div>
         </dl>
       </div>
     </header>
@@ -272,26 +215,21 @@
         <div class="section">
           <h2>Über mich</h2>
           <p class="bio">
-            Ich bin Daniel de Groot, 192 cm groß, Male Model &amp; Artist mit vielseitiger
-            Ausstrahlung – von seriös und business-tauglich bis hin zu sportlich und
-            ausdrucksstark. Durch meine besondere Körpergröße und Präsenz eigne ich mich
-            ideal für Fashion, Editorials, Commercials und Events. Zusätzlich bringe ich
-            Bühnenerfahrung als Zauberkünstler und Performer mit, was mir vor der Kamera
-            ein natürliches, ausdrucksstarkes Spiel ermöglicht.
+            Ich bin Daniel de Groot, 192 cm groß, Male Model & Artist mit vielseitiger Ausstrahlung – von seriös und business-tauglich bis hin zu sportlich und ausdrucksstark. Durch meine besondere Körpergröße und Präsenz eigne ich mich ideal für Fashion, Editorials, Commercials und Events. Zusätzlich bringe ich Bühnenerfahrung als Zauberkünstler und Performer mit, was mir vor der Kamera ein natürliches, ausdrucksstarkes Spiel ermöglicht. 
           </p>
         </div>
         
         <div class="section">
-          <h2>Performance & Performance Arts</h2>
+          <h2>Performance Arts</h2>
           <div class="gallery">
-            <figure class="tall">
-              <img src="images/10_stilts_full.jpg" alt="Daniel de Groot – Stelzenlauf Performance" />
+            <figure style="grid-row: span 2;">
+              <img src="images/10_stilts_full.jpg" alt="Stelzenlauf" />
             </figure>
             <figure>
-              <img src="images/11_unicycle.jpg" alt="Daniel de Groot – Einrad Performance" />
+              <img src="images/11_unicycle.jpg" alt="Einrad" />
             </figure>
             <figure>
-              <img src="images/03_frack_open.jpg" alt="Daniel de Groot – Magier" />
+              <img src="images/03_frack_open.jpg" alt="Magier" />
             </figure>
           </div>
         </div>
@@ -299,11 +237,8 @@
         <div class="section">
           <h2>Special Skills</h2>
           <ul class="stats-list">
-            <li>• Zauberei / Magic Acts</li>
-            <li>• Jonglage</li>
-            <li>• Handstand</li>
-            <li>• Stelzenlaufen</li>
-            <li>• Einradfahren</li>
+            <li>• Zauberei | Jonglage</li>
+            <li>• Handstand | Stelzen | Einrad</li>
           </ul>
         </div>
       </section>
@@ -312,26 +247,21 @@
         <div class="section">
           <h2>Commercial & Editorial</h2>
           <div class="gallery">
-            <figure>
-              <img src="images/02_red_jacket_portrait.jpg" alt="Daniel de Groot – Portrait" />
-            </figure>
-            <figure class="wide">
-              <img src="images/04_hammock_bw.jpg" alt="Daniel de Groot – SW Portrait" />
-            </figure>
-            <figure class="wide">
-              <img src="images/05_worker_hammer.jpg" alt="Daniel de Groot – Worker-Look" />
-            </figure>
-            <figure class="wide">
-              <img src="images/09_instruments_sitting.jpg" alt="Daniel de Groot – Spiritueller Look" />
-            </figure>
+            <figure><img src="images/02_red_jacket_portrait.jpg" alt="Portrait" /></figure>
+            <figure><img src="images/04_hammock_bw.jpg" alt="Lifestyle" /></figure>
+          </div>
+          <div class="gallery compact-grid" style="margin-top: 8px;">
+            <figure><img src="images/05_worker_hammer.jpg" alt="Worker" /></figure>
+            <figure><img src="images/09_instruments_sitting.jpg" alt="Artist" /></figure>
+            <figure><img src="images/13_workman.jpg" alt="Arbeiter" /></figure>
           </div>
         </div>
         
         <div class="section">
           <h2>Portraits</h2>
           <div class="polaroids">
-            <img src="images/07_terrace_bw.jpg" alt="Portrait Outdoor SW" />
-            <img src="images/08_face_close_bw.jpg" alt="Close-up SW" />
+            <img src="images/07_terrace_bw.jpg" alt="Outdoor" />
+            <img src="images/08_face_close_bw.jpg" alt="Close-up" />
           </div>
         </div>
       </aside>
@@ -339,16 +269,10 @@
 
     <footer class="contact-box">
       <div class="contact-info">
-        <strong>Booking &amp; Anfragen</strong><br />
-        E-Mail: <a href="mailto:info@zauberclown-larifari.de"><strong>info@zauberclown-larifari.de</strong></a><br />
-        Standort: 65205 Wiesbaden, Deutschland
+        <strong>Booking:</strong> <a href="mailto:info@zauberclown-larifari.de">info@zauberclown-larifari.de</a> | Wiesbaden
       </div>
-      <div style="text-align: right;">
-        <button class="btn btn-secondary" onclick="window.print()">Sedcard PDF</button>
-        <a class="btn" href="mailto:info@zauberclown-larifari.de">Direkt anfragen</a>
-        <nav class="footer-nav">
-          <a href="legal.html">Impressum &amp; Datenschutz</a>
-        </nav>
+      <div>
+        <a class="btn" href="mailto:info@zauberclown-larifari.de">Anfragen</a>
       </div>
     </footer>
   </div>
